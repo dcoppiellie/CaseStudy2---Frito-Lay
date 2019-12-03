@@ -114,7 +114,7 @@ numplot(fl2, explan = "YearsAtCompany", resp = "Attrition")
 plotlist <- lapply(numvars, function(x) numplot(fl2, x, "Attrition"))
 
 plot_grid(plotlist = plotlist)
-#########Based on above analysis, more variables may be elminated.
+#########Based on above analysis, more variables may be elminated. 
 ##For example, Age, PercentSalaryHike, NumCompaniesWorked, YearsSinceLastPromotion, TrainingTimesLastYear, YearsAtCompany
 
 fl3 <- Frito %>% select(Attrition, BusinessTravel,	Department,
