@@ -55,7 +55,6 @@ correlator  <-  function(fl){
              order="hclust", title="Variable Corr Heatmap",
              tl.srt=45, tl.cex = 0.8)
   }
-
 #######Eliminate variables with correlation with each other###########
 ##I decided to use a 75% correlation threshold to eliminate similar variables that convey like information.
 ##With this, the assumed strongest indicator was chosen.
@@ -77,7 +76,6 @@ fl2 <- Frito %>% select(Age, Attrition, BusinessTravel,	Department,
                        YearsAtCompany,	YearsSinceLastPromotion)
 
 skim(fl2)
-
 #############Numeric:Catergorical variable elimination#####################
 ##Convert categorical variables to factors###
 fl2$Attrition <- as.factor(fl2$Attrition)
@@ -94,14 +92,11 @@ fl2$MaritalStatus <- as.factor(fl2$MaritalStatus)
 fl2$WorkLifeBalance <- as.factor(fl2$WorkLifeBalance)
 
 skim(fl2)
-
-# x : y
 # numeric : categorical
 
 fl2$rvar <- rnorm(nrow(fl2))
 
 length(unique(fl2$JobRole))
-# [1] 2
 
 ggplot(data = fl2) + geom_density(aes_string(x = "rvar", fill = "Attrition"), alpha = 0.5)
 
@@ -109,7 +104,6 @@ ggplot(data = fl2) + geom_density(aes_string(x = "rvar", fill = "Attrition"), al
 target <- "Attrition"
 # step 2, save explanator variable names
 numvars <- fl2 %>% keep(is.numeric) %>% colnames
-
 
 numplot <- function(df, explan, resp) {
   ggplot(data = df) + geom_density(aes_string(x = explan, fill = resp), alpha = 0.5)
@@ -120,7 +114,6 @@ numplot(fl2, explan = "YearsAtCompany", resp = "Attrition")
 plotlist <- lapply(numvars, function(x) numplot(fl2, x, "Attrition"))
 
 plot_grid(plotlist = plotlist)
-
 #########Based on above analysis, more variables may be elminated.
 ##For example, Age, PercentSalaryHike, NumCompaniesWorked, YearsSinceLastPromotion, TrainingTimesLastYear, YearsAtCompany
 
@@ -134,31 +127,25 @@ skim(fl3)
 ########Categorical:Categorical variable elmination##############
 ggplot(data = fl3) + geom_bar(aes(x = WorkLifeBalance, fill = Attrition), position = "fill", alpha = 0.9) + coord_flip()
 
-
 ones <- rep(1, nrow(fl3))
 zeroes <- rep(0, nrow(fl3))
 onezeroes <- c(ones, zeroes)
 
 fl3$rcat <- sample(onezeroes, nrow(fl3))
 
-
 ggplot(data = fl3) + geom_bar(aes(x = rcat, fill = Attrition), position = "fill", alpha = 0.9) + coord_flip()
-
 # step 1: Name target variable:
 
 target <- "Attrition"
 
 # step 2: name explanatory vars
-
 expls <- fl3 %>% keep(is.factor) %>% colnames
-
 
 catplot <- function(df, x,y){
   ggplot(data = df, aes_string(x = x, fill = y)) + 
     geom_bar(position = "fill", alpha = 0.9) + 
     coord_flip()
 }
-
 
 plotlist2 <- lapply(expls, function(x) catplot(fl3, x, target))
 plot_grid(plotlist = plotlist2)
@@ -182,7 +169,6 @@ skim(flfinal)
 #####KNN Model######################
 flfinal$Attrition <- as.factor(flfinal$Attrition)
 flfinal$StockOptionLevel <- as.numeric(flfinal$StockOptionLevel)
-
 # Spit Data set into a training Data set and a testing dataset. @ 75/25
 sp = 0.75  
 
@@ -192,7 +178,7 @@ for (seed in 1:100)
   TrainingRows = sample(1:dim(flfinal)[1],round(sp * dim(flfinal)[1])) # Calculate Training Rows
   fl_train = flfinal[TrainingRows,]  # Split into 2 seperate data frames. Include Training Rows
   fl_test = flfinal[-TrainingRows,]  # Exclude Training Rows (Testing Rows)
-  classifications = knn(fl_train[,c(2,3,4)], fl_test[,c(2,3,4)],
+  classifications = knn.cv(fl_train[,c(2,3,4)], fl_test[,c(2,3,4)],
                         fl_train$Attrition, k=7, prob = TRUE)
   table(fl_test$Attrition, classifications)
   cm = confusionMatrix(table(fl_test$Attrition, classifications))
