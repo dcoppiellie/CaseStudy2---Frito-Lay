@@ -178,7 +178,7 @@ for (seed in 1:100)
   TrainingRows = sample(1:dim(flfinal)[1],round(sp * dim(flfinal)[1])) # Calculate Training Rows
   fl_train = flfinal[TrainingRows,]  # Split into 2 seperate data frames. Include Training Rows
   fl_test = flfinal[-TrainingRows,]  # Exclude Training Rows (Testing Rows)
-  classifications = knn.cv(fl_train[,c(2,3,4)], fl_test[,c(2,3,4)],
+  classifications = knn(fl_train[,c(2,3,4)], fl_test[,c(2,3,4)],
                         fl_train$Attrition, k=7, prob = TRUE)
   table(fl_test$Attrition, classifications)
   cm = confusionMatrix(table(fl_test$Attrition, classifications))
