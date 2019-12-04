@@ -253,8 +253,12 @@ write.csv(nsalary, "C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 
 ## Conclusion
 - Employee Data Analyzed for Predictive Variables
 - k-NN computed a better Predictive Model for "Attrition" than NaiveBayes
-- Linear Regression computed an accurate (~91%) Predictive Model for "MonthlyIncome"
-
+  - Sensitivity: 85.4%
+  - Specificity: 60%
+- Linear Regression computed an accurate Predictive Model for "MonthlyIncome"
+  - DistanceFromHome statistically significant (p-value = 0.08)
+  - RSME = $1410
+  - Adjusted R-squared: 0.9059
 
 
 
