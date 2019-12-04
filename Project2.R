@@ -15,7 +15,6 @@ library(e1071)
 ######################################
 ##  Read in Files
 ######################################
-
 Frito <- read.csv("C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 and 15 Case Study 2\\CaseStudy2-data.csv",
                   strip.white = TRUE,
                   header = TRUE)
@@ -23,7 +22,7 @@ Frito <- read.csv("C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 a
 # Always important to look at the basic structure first
 str(Frito) 
 summary(Frito)
-
+head(Frito)
 length(Frito)
 skim(Frito)
 ########Removing columns (Employee Count and Standard hours) with a single value from data######
@@ -91,15 +90,6 @@ fl2$JobSatisfaction <- as.factor(fl2$JobSatisfaction)
 fl2$MaritalStatus <- as.factor(fl2$MaritalStatus)
 fl2$WorkLifeBalance <- as.factor(fl2$WorkLifeBalance)
 
-skim(fl2)
-# numeric : categorical
-
-fl2$rvar <- rnorm(nrow(fl2))
-
-length(unique(fl2$JobRole))
-
-ggplot(data = fl2) + geom_density(aes_string(x = "rvar", fill = "Attrition"), alpha = 0.5)
-
 # step 1, save target variable name
 target <- "Attrition"
 # step 2, save explanator variable names
@@ -125,15 +115,6 @@ fl3 <- Frito %>% select(Attrition, BusinessTravel,	Department,
 
 skim(fl3)
 ########Categorical:Categorical variable elmination##############
-ggplot(data = fl3) + geom_bar(aes(x = WorkLifeBalance, fill = Attrition), position = "fill", alpha = 0.9) + coord_flip()
-
-ones <- rep(1, nrow(fl3))
-zeroes <- rep(0, nrow(fl3))
-onezeroes <- c(ones, zeroes)
-
-fl3$rcat <- sample(onezeroes, nrow(fl3))
-
-ggplot(data = fl3) + geom_bar(aes(x = rcat, fill = Attrition), position = "fill", alpha = 0.9) + coord_flip()
 # step 1: Name target variable:
 
 target <- "Attrition"
@@ -182,9 +163,6 @@ for (seed in 1:100)
                         fl_train$Attrition, k=7, prob = TRUE)
   table(fl_test$Attrition, classifications)
   cm = confusionMatrix(table(fl_test$Attrition, classifications))
-  AccHolder[seed] = cm$overall[1]
-  SensHolder[seed] = cm$byClass[1]
-  SpecHolder[seed] = cm$byClass[2]
 }
 
 cm
@@ -232,9 +210,5 @@ confint(fit2)
 nsalary <- read.csv("C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 and 15 Case Study 2\\CaseStudy2CompSet No Salary.csv", 
                    strip.white = TRUE,
                    header = TRUE)
-
-str(nsalary) # I see car information: 2 factor columns, 3 num columns, and 4 int columns
-summary(nsalary)
-
-nsalary$salary <- predict(fit2, salary)
+nsalary$salary <- predict(fit2, nsalary)
 write.csv(nsalary, "C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 and 15 Case Study 2\\Case2PredictionsCoppiellie Salary.csv")
