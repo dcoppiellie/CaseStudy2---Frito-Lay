@@ -35,15 +35,18 @@ Frito <- read.csv("C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 a
 ```
 ## Introduction 
 
-- Project 2-- DDSAnalytics
+- Project 2: DDSAnalytics
   - Developed and Presented By: David Coppiellie
 <br>
 <br>
+Goals: 
+  - Achieve 60% Sensitivity and 60% Specificty for Predictive Model on Attrittion
+  - Develop Logistic Regression Model with RSME > $3,000
 <br>
 
 ## Review of Tasks
 
-- Explore Employee Data Provided to DDSAnalytics
+- Explore Employee Data Provided by DDSAnalytics
 - Analyze Employee Data to Understand "Attrition"
 - Provide a Predictive Model for "Attrition"
 - Provide a Predictive Model for "MonthlyIncome"

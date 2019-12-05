@@ -12,7 +12,7 @@ library(cowplot)
 library(GGally)
 library(class)
 library(e1071)
-library(knitr)
+library(rmarkdown)
 ######################################
 ##  Read in Files
 ######################################
