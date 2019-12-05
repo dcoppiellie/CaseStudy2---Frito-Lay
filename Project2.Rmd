@@ -4,8 +4,6 @@ author: "David Coppiellie"
 date: "12/5/2019"
 output: 
   ioslides_presentation: 
-    css: Styles.css
-    logo: SMU.png
     smaller: yes
 runtime: shiny
 ---
