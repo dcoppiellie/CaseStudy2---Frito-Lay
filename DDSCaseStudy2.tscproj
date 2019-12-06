@@ -66,7 +66,7 @@
           "sampleRate" : 44100,
           "bitDepth" : 16,
           "numChannels" : 2,
-          "integratedLUFS" : -1.79769313486232e+308,
+          "integratedLUFS" : 0.0,
           "peakLevel" : 0.0,
           "metaData" : ""
         }
@@ -122,7 +122,7 @@
           "sampleRate" : 44100,
           "bitDepth" : 16,
           "numChannels" : 2,
-          "integratedLUFS" : -1.79769313486232e+308,
+          "integratedLUFS" : 0.0,
           "peakLevel" : 0.0,
           "metaData" : ""
         }
@@ -178,7 +178,7 @@
           "sampleRate" : 44100,
           "bitDepth" : 16,
           "numChannels" : 2,
-          "integratedLUFS" : -1.79769313486232e+308,
+          "integratedLUFS" : 0.0,
           "peakLevel" : 0.0,
           "metaData" : ""
         }
@@ -234,7 +234,7 @@
           "sampleRate" : 44100,
           "bitDepth" : 16,
           "numChannels" : 2,
-          "integratedLUFS" : -1.79769313486232e+308,
+          "integratedLUFS" : 0.0,
           "peakLevel" : 0.0,
           "metaData" : ""
         }
@@ -290,7 +290,7 @@
           "sampleRate" : 44100,
           "bitDepth" : 16,
           "numChannels" : 2,
-          "integratedLUFS" : -1.79769313486232e+308,
+          "integratedLUFS" : 0.0,
           "peakLevel" : 0.0,
           "metaData" : ""
         }
@@ -302,7 +302,7 @@
     "sceneTrack" : {
       "scenes" : [
         {
-          "duration" : 13.8,
+          "duration" : 420.566666666667,
           "title" : "",
           "type" : "",
           "csml" : {
@@ -317,10 +317,10 @@
                         {
                           "id" : 8,
                           "_type" : "ScreenVMFile",
-                          "src" : 1,
+                          "src" : 5,
                           "trackNumber" : 0,
                           "attributes" : {
-                            "ident" : "Rec 12-05-19"
+                            "ident" : "Rec 12-05-19_005"
                           },
                           "parameters" : {
                             "cursorScale" : {
@@ -338,9 +338,9 @@
 
                           ],
                           "start" : 0,
-                          "duration" : 414,
+                          "duration" : 12617,
                           "mediaStart" : 0,
-                          "mediaDuration" : 414,
+                          "mediaDuration" : 12617,
                           "scalar" : 1,
                           "animationTracks" : {
 
@@ -350,7 +350,7 @@
                         {
                           "id" : 9,
                           "_type" : "AMFile",
-                          "src" : 1,
+                          "src" : 5,
                           "trackNumber" : 3,
                           "attributes" : {
                             "ident" : "",
@@ -362,9 +362,9 @@
 
                           ],
                           "start" : 0,
-                          "duration" : 414,
+                          "duration" : 12617,
                           "mediaStart" : 0,
-                          "mediaDuration" : 414,
+                          "mediaDuration" : 12617,
                           "scalar" : 1,
                           "animationTracks" : {
 
@@ -372,9 +372,9 @@
                         }
 ,
                     "start" : 0,
-                    "duration" : 414,
+                    "duration" : 12617,
                     "mediaStart" : 0,
-                    "mediaDuration" : 414,
+                    "mediaDuration" : 12617,
                     "scalar" : 1,
                     "metadata" : {
                       "AutoAppliedSmartFocus" : "False",
@@ -393,10 +393,10 @@
                         {
                           "id" : 11,
                           "_type" : "VMFile",
-                          "src" : 1,
+                          "src" : 5,
                           "trackNumber" : 1,
                           "attributes" : {
-                            "ident" : "Rec 12-05-19"
+                            "ident" : "Rec 12-05-19_005"
                           },
                           "parameters" : {
                             "translation0" : {
@@ -424,9 +424,9 @@
 
                           ],
                           "start" : 0,
-                          "duration" : 406,
+                          "duration" : 12615,
                           "mediaStart" : 0,
-                          "mediaDuration" : 406,
+                          "mediaDuration" : 12615,
                           "scalar" : 1,
                           "animationTracks" : {
 
@@ -436,7 +436,7 @@
                         {
                           "id" : 12,
                           "_type" : "AMFile",
-                          "src" : 1,
+                          "src" : 5,
                           "trackNumber" : 2,
                           "attributes" : {
                             "ident" : "",
@@ -448,9 +448,9 @@
 
                           ],
                           "start" : 0,
-                          "duration" : 406,
+                          "duration" : 12615,
                           "mediaStart" : 0,
-                          "mediaDuration" : 406,
+                          "mediaDuration" : 12615,
                           "scalar" : 1,
                           "animationTracks" : {
 
@@ -458,9 +458,9 @@
                         }
 ,
                     "start" : 0,
-                    "duration" : 406,
+                    "duration" : 12615,
                     "mediaStart" : 0,
-                    "mediaDuration" : 406,
+                    "mediaDuration" : 12615,
                     "scalar" : 1,
                     "metadata" : {
                       "clipSpeedAttribute" : false
@@ -472,6 +472,11 @@
                 "trackIndex" : 2,
                 "medias" : [
                 ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                ]
               }
             ]
           }
@@ -479,6 +484,16 @@
       ]
     },
     "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
       {
         "ident" : "",
         "audioMuted" : false,
@@ -526,8 +541,8 @@
     "backgroundColor" : [ 0, 0, 0, 255]
   },
   "metadata" : {
-    "AutoSaveFile" : "C:\\Users\\Owner\\AppData\\Local\\TechSmith\\Camtasia Studio\\19.0\\Auto-Saves\\Untitled Project3a712f0c.autosave.tscproj",
-    "CanvasZoom" : 32,
+    "AutoSaveFile" : "C:\\Users\\Owner\\AppData\\Local\\TechSmith\\Camtasia Studio\\19.0\\Auto-Saves\\DDSCaseStudy23ec97f8d.autosave.tscproj",
+    "CanvasZoom" : 71,
     "Date" : "2019-12-04 09:25:24 PM",
     "IsAutoSave" : "0",
     "Language" : "ENU",
