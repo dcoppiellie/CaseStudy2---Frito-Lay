@@ -41,7 +41,7 @@ Frito <- read.csv("C:\\Users\\Owner\\Desktop\\SMU DataScience\\DS6306\\Unit 14 a
 <br>
 Goals: 
   - Achieve 60% Sensitivity and 60% Specificty for Predictive Model on Attrittion
-  - Develop Logistic Regression Model with RSME > $3,000
+  - Develop Logistic Regression Model with RSME < $3,000
 <br>
 
 ## Review of Tasks
